@@ -3,7 +3,7 @@ const assert = require("assert");
 
 const url = process.env.mongourl;
 
-const dbName = "job";
+const dbName = "Jobs";
 
 const client = new MongoClient(url, { useUnifiedTopology: true });
 
@@ -19,7 +19,7 @@ const getDatabase = (callback) => {
 };
 
 const findDocuments = function (db, callback) {
-  const collection = db.collection("offers");
+  const collection = db.collection("jobs");
   collection.find({}).toArray(function (err, docs) {
     assert.equal(err, null);
     callback(docs);
