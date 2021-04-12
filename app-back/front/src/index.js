@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import Form from "./components/Form";
 import Jobs from "./components/Jobs";
 
-ReactDOM.render(<Jobs />, document.getElementById("root"));
+ReactDOM.render(<Form />, document.getElementById("root"));
