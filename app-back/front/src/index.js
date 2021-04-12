@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import Form from "./components/Form";
-import Jobs from "./components/Jobs";
+import Unified from "./components/Unified";
 
-ReactDOM.render(<Form />, document.getElementById("root"));
+ReactDOM.render(<Unified />, document.getElementById("root"));
