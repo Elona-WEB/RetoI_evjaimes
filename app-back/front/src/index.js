@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import Job from "./components/Job";
+import Jobs from "./components/Jobs";
 
-ReactDOM.render(<Job />, document.getElementById("root"));
+ReactDOM.render(<Jobs />, document.getElementById("root"));
