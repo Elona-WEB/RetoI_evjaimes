@@ -1,23 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Job from "./Job";
 
-const JobsList = () => {
-  const state = {
-    offers: [
-      {
-        name: "Asesor comercial de hipermercadoo",
-        company: "Schneider Electric",
-        salary: "$4.5 a $5.5 millones",
-        city: "Bogotá, Colombia",
-      },
-      {
-        name: "Desarrollador de software",
-        company: "Google Inc.",
-        salary: "$20 a 25 millones",
-        city: "Palo Alto, CA, USA",
-      },
-    ],
-  };
+export const Jobs = () => {
+  const [state, setState] = useState({ offers: [] });
+
+  useEffect(() => {
+    const url = "/offers";
+    fetch(url)
+      .then((res) => {
+        return res.json();
+      })
+      .then((offers) => {
+        setState({ offers });
+      });
+  }, []);
 
   return (
     <div>
@@ -27,5 +23,3 @@ const JobsList = () => {
     </div>
   );
 };
-
-export default JobsList;
