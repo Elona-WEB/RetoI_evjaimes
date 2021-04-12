@@ -1,13 +1,20 @@
 var express = require("express");
 var router = express.Router();
-const Mongolib = require("../db/Mongolib");
+const Job = require("../controllers/job");
 
-/* GET home page. */
+//GET ALL
 router.get("/", function (req, res, next) {
-  Mongolib.getDatabase((db) => {
-    Mongolib.findDocuments(db, (docs) => {
-      res.send(docs);
-    });
+  Job.findAll().then((result) => {
+    res.send(result);
+  });
+});
+
+//POST
+router.post("/", function (req, res, next) {
+  const { name, company, salary, city } = req.body;
+
+  Job.insertOne({ name, company, salary, city }).then((result) => {
+    res.send(result.ops[0]);
   });
 });
 module.exports = router;

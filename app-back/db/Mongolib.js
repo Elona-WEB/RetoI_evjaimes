@@ -28,3 +28,4 @@ const findDocuments = function (db, callback) {
 
 exports.getDatabase = getDatabase;
 exports.findDocuments = findDocuments;
+module.exports = client;

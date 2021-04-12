@@ -1,4 +1,5 @@
 import { useState } from "react";
+const axios = require("axios");
 
 const useForm = (schema) => {
   const [inputs, setInputs] = useState({});
@@ -8,7 +9,9 @@ const useForm = (schema) => {
     event.preventDefault();
     const { error } = validate();
     if (!error) {
-      console.log("Form submitted");
+      axios.post("/offers/", inputs).then(function (response) {
+        console.log(response);
+      });
     } else {
       console.log(error);
       setErrors(error);
