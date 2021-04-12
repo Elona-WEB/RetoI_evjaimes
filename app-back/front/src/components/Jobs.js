@@ -5,7 +5,7 @@ const JobsList = () => {
   const state = {
     offers: [
       {
-        name: "Asesor comercial de hipermercado",
+        name: "Asesor comercial de hipermercadoo",
         company: "Schneider Electric",
         salary: "$4.5 a $5.5 millones",
         city: "Bogotá, Colombia",
