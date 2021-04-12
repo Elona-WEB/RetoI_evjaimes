@@ -6,7 +6,7 @@ const useForm = (schema) => {
   const [errors, setErrors] = useState("");
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+    //event.preventDefault();
     const { error } = validate();
     if (!error) {
       axios.post("/offers/", inputs).then(function (response) {
