@@ -3,11 +3,12 @@ import Jobs from "./Jobs";
 
 function Unified() {
   return (
-    <div>
-      <div>
+    <div className="row">
+      <div className="col">
         <Form />
       </div>
-      <div>
+      <div className="col-8">
+        <h1>Lista de empleos</h1>
         <Jobs />
       </div>
     </div>
